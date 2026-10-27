@@ -1,6 +1,4 @@
-from pathlib import Path
-
-html = r'''<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
@@ -369,8 +367,3 @@ html = r'''<!DOCTYPE html>
   </footer>
 </body>
 </html>
-'''
-
-out = Path("/mnt/data/index.html")
-out.write_text(html, encoding="utf-8")
-print(f"Создан файл: {out} ({out.stat().st_size} байт)")
