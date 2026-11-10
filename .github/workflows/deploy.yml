@@ -21,6 +21,13 @@ jobs:
 # Шаг 1. Скопировать файлы репозитория на виртуальную машину
       - name: Checkout repository
         uses: actions/checkout@v4
+
+# НОВЫЙ ШАГ: Проверка HTML/CSS (линтинг)
+      - name: Lint HTML and CSS
+        run: |
+          npx htmlhint "**/*.html" --ignore "node_modules/**"
+          npx stylelint "**/*.css" --allow-empty-input
+
 # Шаг 2. Подготовить окружение GitHub Pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
